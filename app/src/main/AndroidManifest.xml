@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sample">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WIFI_STATE_CHANGED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.RecyclerSample" />
+        <activity android:name=".view.UserInfoDetailView" />
+        <activity android:name=".view.ComplexRecyclerViewSample" />
+        <activity android:name=".view.TextSpeechActivity" />
+        <activity android:name=".view.EmergencyCallActivity" />
+        <activity android:name=".view.CoordinateLayoutSampleActivity" />
+        <activity
+            android:name=".view.CheeseDetailActivity"
+            android:parentActivityName=".view.CoordinateLayoutSampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.CoordinateLayoutSampleActivity" />
+        </activity>
+        <activity android:name=".view.BottomBarAndMenuActivity" />
+        <activity android:name=".view.BottomSheetDialogActivity" />
+        <activity android:name=".view.SampleLayoutViewActivity" />
+        <activity android:name=".view.TabFragmentActivity"></activity>
+    </application>
+
+</manifest>

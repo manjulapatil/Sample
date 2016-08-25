@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recycler_view_demo">Recycler View Demo</string>
+    <string name="complex_recycler_view_demo">Complex Recycler View Demo</string>
+    <string name="text_speech_demo">Text-Speech Demo</string>
+    <string name="coordinate_layout_demo">Coordinate Layout Demo</string>
+    <string name="emergency_call">Emergency Call</string>
+    <string name="bottom_bar_demo">Bottom Bar Demo</string>
+    <string name="sample_layouts">Sample Layouts</string>
+</resources>

@@ -4,29 +4,20 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.telephony.CellInfo;
-import android.telephony.CellLocation;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.telephony.cdma.CdmaCellLocation;
-import android.telephony.gsm.GsmCellLocation;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
 import com.example.sample.R;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 private Button recycler_view_button, complex_recycler_view_button, text_speech_button, coordinate_layout, emergancy_call_button, bottom_menu_bar_button, sample_layouts_button, tab_layout_button;
@@ -42,6 +33,55 @@ private Button recycler_view_button, complex_recycler_view_button, text_speech_b
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.app_name);*/
+        Button alert_list_button=(Button) findViewById(R.id.alert_list_button);
+        alert_list_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UserInfoDetailView.class);
+                startActivity(intent);
+            }
+        });
+        Button alert_detail_button=(Button) findViewById(R.id.alert_detail_button);
+        alert_detail_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UserInfoUpdateActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button parallel_asynctask=(Button) findViewById(R.id.parallel_asynctask);
+        parallel_asynctask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ParallalAsyncTaskExecution.class);
+                startActivity(intent);
+            }
+        });
+        Button intentservice_button=(Button) findViewById(R.id.intentservice_button);
+        intentservice_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityIntentService.class);
+                startActivity(intent);
+            }
+        });
+        Button internet_api_button=(Button) findViewById(R.id.internet_api_button);
+        internet_api_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InternetAPIActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button background_service_button=(Button) findViewById(R.id.background_service_button);
+        background_service_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityBackgroundService.class);
+                startActivity(intent);
+            }
+        });
+
         recycler_view_button = (Button) findViewById(R.id.recycler_view_button);
         recycler_view_button.setOnClickListener(new View.OnClickListener() {
             @Override

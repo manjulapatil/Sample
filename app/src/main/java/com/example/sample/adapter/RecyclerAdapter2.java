@@ -8,18 +8,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.sample.R;
-import com.example.sample.data.User;
+import com.example.sample.data.Alert;
 
 import java.util.ArrayList;
 
 /**
- * Created by manjula on 4/18/16.
+ * Created by manjula on 9/22/16.
  */
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
+public class RecyclerAdapter2  extends RecyclerView.Adapter<RecyclerAdapter2.ViewHolder>{
     private Context context;
-    private ArrayList<User> userList;
+    private ArrayList<Alert> userList;
 
-    public RecyclerAdapter(Context activity, ArrayList<User> userList) {
+    public RecyclerAdapter2(Context activity, ArrayList<Alert> userList) {
         this.context = activity;
         this.userList = userList;
     }
@@ -27,14 +27,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
-        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_row_layout, parent, false);
+        v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.recycler_row_layout, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ViewHolder holder1 = (ViewHolder) holder;
-        holder1.temp.setText(userList.get(position).getName());
+        holder1.temp.setText(userList.get(position).getMsg_value());
+        holder1.label_textview.setText(userList.get(position).getMsg_key());
     }
 
     @Override
@@ -44,8 +46,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView temp;
+        private TextView label_textview;
         public ViewHolder(View itemView) {
             super(itemView);
+            label_textview = (TextView) itemView.findViewById(R.id.label_textview);
             temp = (TextView) itemView.findViewById(R.id.value_textview);
         }
     }
